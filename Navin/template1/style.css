@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+
+.main-wrp{
+	/*position: relative;*/
+	height:	auto;
+	max-width:	1366px;
+}
+.div-1{
+	position: absolute;
+	width: 100%;
+	height: 609px;
+	background-color: #443b36;
+}
+
+.div-2{
+	/*position: relative;*/
+	width: 100%;
+	height: 852px;	
+	background-color: #edece7;
+}
+
+.div-3{
+	width: 100%;
+	height: 265px;	
+	background-color: #39302b;
+}
+
+.nav{
+	position: absolute;
+	top: 121PX;
+	left: 228px;
+	/*height: 60px;*/
+	width: 68%;
+	/*background-color: #dedddb;*/
+}
+
+ul{
+	list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding:0;
+    background-color: #dedddb;
+    height: 60px;
+}
+
+ul li{
+	display: inline;
+	margin-top: 20px;
+    border-right:1px dotted #bbb;
+    float: left;
+    margin-top: 20px;
+    
+    
+    /*padding: 0px 20px 0px 20px;*/
+}
+li a{
+	padding: 14px 29px;
+	/*list-style-type: none;*/
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 50px;
+	font-family: 'Oswald', sans-serif;
+
+}
+
+ul li a:hover{
+	background-color: #e6a321;
+	height: 60px;
+	color: white;
+}
+
+ul input[type=text] {
+  float: right;
+  padding: 6px;
+  margin-top: 12px;
+  margin-right: 26px;
+  border: none;
+  font-size: 17px;
+}
+
+.img{
+	position: absolute;
+	top: 63PX;
+	width: 100%;
+	/*left: 228px;*/
+}
+
+.cont{
+	position: absolute;
+	top: 50px;
+	color: white;
+	left: 228px;
+}
+
+.div2-1-content{
+	/*top: 554px;*/
+}
+
+
+
