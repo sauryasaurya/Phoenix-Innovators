@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+.main-wrap{
+	width: 100%;
+	height: auto;
+}
+.top-home-wrapper{
+	width:100%;
+	background-color: #443b36;
+	min-height: 500px;
+}
+.header-wrap{
+	width: 918px;
+	margin: 0 auto;
+	height: auto;
+}
+
+.nav{
+	/*height: 60px;*/
+	width: 100%;
+	/*background-color: #dedddb;*/
+}
+
+ul{
+	list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding:0;
+    background-color: #dedddb;
+    height: 60px;
+}
+
+ul li{
+	display: inline;
+	margin-top: 20px;
+    border-right:1px dotted #bbb;
+    float: left;
+    
+    /*padding: 0px 20px 0px 20px;*/
+}
+li a{
+	padding: 14px 20px;
+	/*list-style-type: none;*/
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 50px;
+	font-family: 'Oswald', sans-serif;
+
+}
+
+ul li a:hover{
+	background-color: #e6a321;
+	height: 60px;
+	color: white;
+}
+
+ul input[type=text] {
+  float: right;
+  padding: 6px;
+  margin-top: 12px;
+  margin-right: 26px;
+  border: none;
+  font-size: 17px;
+}
+
+.slider-wrap{
+	width: 918px;
+	margin: 0 auto;
+	min-height: 400px;
+	position: relative;
+}
+.slider-wrap .slider{
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 400px;
+}
