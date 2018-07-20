@@ -3,32 +3,37 @@
 <head>
     <title>Template 1</title>
     <link rel="stylesheet" href="css/myStyle.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </head>
 
 <body>
+    <!-- Wrapper Start -->
     <div class="wrapper">
+        <!-- Responsive Nav Bar -->
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">Home</a>
+            <a href="#news">Portfolio</a>
+            <a href="#contact">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
         <!-- Header -->
         <div id="header">
-            <ul>
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-                <li style="float: left;">
-                    <a href="#"> WebWorld</a>
-                </li>
-            </ul>
-
             <!-- Slider Start Code Pen-->
             <div id="slider">
                 <figure>
-
                     <img src="img/img1.jpg" alt="">
                     <div>suman</div>
                     <img src="img/img2.jpg" alt="">
@@ -39,32 +44,193 @@
             </div>
             <!-- Slider End -->
 
-            <h3 style="text-align: center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti quae tenetur iusto dolorum, ad optio
+            <h3 class="tagline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti quae tenetur iusto dolorum, ad optio
                 ipsum reprehenderit nostrum totam molestias impedit magnam veniam, cupiditate dignissimos culpa ex vitae!
                 Repudiandae!
             </h3>
         </div>
 
         <!-- Information Page -->
-        <div class="info">
-            <img src="img/info-1" alt="">
-            <div class="caption">
-                <h2 style="text-align: center">Who we are?</h2>
-                Lorem ipsum dolor sit amet. </div>
+        <div class="info-bar">
+            <div class="info">
+                <img src="img/info-1" alt="">
+                <div class="caption">
+                    <p class="tagline">
+                        <b> Who we are?</b>
+                    </p>
+                    <p class="tagline"> Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="info">
+                <img src="img/info-1" alt="">
+                <div class="caption">
+                    <p class="tagline">
+                        <b> Start Our Project</b>
+                    </p>
+                    <p class="tagline"> Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="info">
+                <img src="img/info-1" alt="">
+                <div class="caption">
+                    <p class="tagline">
+                        <b> Our Team</b>
+                    </p>
+                    <p class="tagline"> Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
         </div>
-        <div class="info">
-            <img src="img/info-1" alt="">
-            <div class="caption">
-                <h2 style="text-align: center">Start Our Project</h2>
-                Lorem ipsum dolor sit amet. </div>
+
+        <br>
+        <!-- Our Features Section -->
+        <div class="hor"></div>
+        <h1 class="tagline">OUR FEATURES</h1>
+        <div class="feat">
+            <img src="img/feat-1.png" alt="">
+            <div class="text">
+                <p class="tagline"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium asperiores provident laborum aut quia
+                    ducimus quibusdam incidunt quo ex, nesciunt, quam, soluta totam eum quae numquam reprehenderit! Architecto,
+                    sapiente unde?
+                    <button>Read More</button>
+                </p>
+            </div>
         </div>
-        <div class="info">
-            <img src="img/info-1" alt="">
-            <div class="caption">
-                <h2 style="text-align: center">Our Team</h2>
-                Lorem ipsum dolor sit amet. </div>
+
+        <div class="hor"></div>
+        <div class="feat">
+            <img src="img/feat-2.png" alt="" style="float: right;">
+            <div class="text" style="float: right;">
+                <p class="tagline">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sed, sapiente quas dolor maxime culpa numquam necessitatibus
+                    incidunt alias autem distinctio quam, quis cum. Cum minima aliquid corrupti dignissimos nesciunt.
+                    <button>Read More</button>
+                </p>
+            </div>
+        </div>
+
+        <!-- Our Latest Projects Section -->
+        <div class="hor"></div>
+        <h3 class="tagline">OUR LATEST PROJECTS</h3>
+        <p class="tagline">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, autem?</p>
+        <div class="info-bar">
+            <div class="pro">
+                <img src="img/pro-1.jpg" alt="">
+                <p class="tagline">
+                    <b>Lorem, ipsum.</b>
+                </p>
+                <p class="tagline">
+                    Lorem, ipsum.</p>
+            </div>
+            <div class="pro">
+                <img src="img/pro-2.jpg" alt="">
+                <div class="text">
+                    <p class="tagline">
+                        <b>Lorem, ipsum.</b>
+                    </p>
+                    <p class="tagline">
+                        Lorem, ipsum.</p>
+                </div>
+            </div>
+            <div class="pro">
+                <img src="img/pro-3.jpg" alt="">
+                <div class="text">
+                    <p class="tagline">
+                        <b>Lorem, ipsum.</b>
+                    </p>
+                    <p class="tagline">
+                        Lorem, ipsum.</p>
+                </div>
+            </div>
+            <div class="pro">
+                <img src="img/pro-4.jpg" alt="">
+                <div class="text">
+                    <p class="tagline">
+                        <b>Lorem, ipsum.</b>
+                    </p>
+                    <p class="tagline">
+                        Lorem, ipsum.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Client Testimonials -->
+        <div class="hor"></div>
+        <h3 class="tagline text">CLIENT TESTIMONIALS</h3>
+        <!-- Feedback Slider -->
+        <!-- <div class="text-slider">
+        <div>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi aspernatur pariatur, eum natus tempore obcaecati
+                aut ab! Delectus, doloremque dolore? </p>
+        </div>
+        <div>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit reprehenderit, ea dicta animi officiis, molestias
+                est repellat soluta libero accusamus voluptate. Officiis hic ipsa quaerat minima cumque qui a? Corporis?
+            </p>
+        </div>
+    </div> -->
+
+
+        <!-- Contact Us Section -->
+        <div class="hor"></div>
+        <div class="contact">
+            <div class="contact-box">
+                <h5 class="text-left">WebWorld</h5>
+                <p class="text-left tagline">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste corrupti doloremque quis facere veniam amet
+                    animi quam quas consequatur laborum.</p>
+            </div>
+            <div class="contact-box">
+                <h5 class="text-left">CONTACT US</h5>
+                <p class="tagline text-left"> Lorem ipsum dolor sit amet. </p>
+                <table>
+                    <tr>
+                        <td>
+                            <i class="fa fa-address-card-o"></i>
+                        </td>
+                        <td>Kathmandu</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-envelope-o"></i>
+                        </td>
+                        <td>Email</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-phone-square"></i>
+                        </td>
+                        <td>Phone</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="contact-box">
+                <h5 class="text-left">LATEST TWEETS</h5>
+                <!-- Twitter Feed -->
+                <a class="twitter-timeline" data-width="220" data-height="200" data-theme="dark" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="contact-box">
+                <h5 class="text-left">OUR NEWSLETTER</h5>
+                <p class="tagline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, alias.</p>
+                <div style="height:auto; border:1px solid brown; background-color: darkcyan; color: honeydew;">
+                    <input type="text" style="background-color:darkslategray; color: white; border: none; font-size:.9em;
+                     " placeholder="Email Address "> GO
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Footer -->
+        <div class="footer">
+            &copy;2018 All Rights Reserved Theme By Phoenix
+            <div class="social">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
         </div>
     </div>
+    <!-- Wrapper End -->
 </body>
 
 </html>
