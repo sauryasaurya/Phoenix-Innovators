@@ -7,7 +7,6 @@ body{
 	background-color: #f4f4f4;
 }
 
-
 .container{
 width:80%;
 margin: auto;
@@ -32,11 +31,6 @@ header ul{
 	padding:0;
 }
 
-#showcase{
-	min-height: 400px;
-	background-image: url('../img/Header.jpg')  no-repeat 0 -400px;
-	text-align: center;
-}
 
 header li{
 	float: left;
@@ -53,4 +47,26 @@ header #branding h1{
 header nav{
 	float: right;
 	margin: 10px;
+}
+
+
+#showcase{
+	min-height: 400px;
+	background: url('../img/Header.jpg')  no-repeat center;
+	text-align: center;
+}
+
+.hor{
+	width: 100%;
+	margin-top: 10px;
+	height: 3px;
+	background-color: black;
+}
+
+.box{
+	float: left;
+	min-width: 30%;
+	margin: ;
+	align-content: center;
+	
 }
