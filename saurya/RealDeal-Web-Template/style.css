@@ -1,6 +1,7 @@
 /*its a total wraper of all contents we see*/
 .main-wrp
 {
+	font-family: arial;
 	max-width: 1366px;
 	height: auto;
 	margin: 0 auto;	
@@ -22,7 +23,7 @@
 
 .icon-nav-wrp
 {
-	width: 860px;
+	max-width: 860px;
 	height: inherit;
 	margin: 0 auto;
 }
@@ -39,7 +40,7 @@
 {	
 	display: inline-block;
 	height: inherit;
-	margin: 25px auto;
+	
 	float: right;
 }
 
@@ -53,6 +54,11 @@
 	display: inline-block;
 	margin: 0 10px;	
 	
+}
+
+.nav-wrp > nav
+{
+	margin: 25px auto;
 }
 
 .nav-wrp > nav > ul > li > a
@@ -81,39 +87,175 @@
 
 .img-wrp > img
 {
-	margin-top: -50px;	
+	/*margin-top: -50px;	*/
 }
 
 .contents
 {
-	width: 80%;
+	max-width: 860px;
+	margin: 0 auto;
+}
+
+.capital
+{
+	text-transform: uppercase;
 }
 
 .hire-us
 {
+	display: inline-block;
+	padding: 25px 0;
 	
 }
 
-.col1
+.right
+{
+	float: right;
+}
+
+.inlined
+{
+	display: inline-block;
+}
+
+.hire-us-text
+{
+	display: inline-block;
+	width: 80%;
+	float: left;
+}
+
+.hire-us .hire-us-text h1, h2, h3, h4, h5, h6
+{
+	color: #2b2b2b;
+	display: inline-block;
+}
+
+.home-opt-home-wrp p
+{
+	margin-top: 10px;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.main-wrp h4
+{
+	margin-top: 15px;
+}
+
+.main-wrp h2
+{
+	margin-bottom: 20px;
+}
+.content-wrp h1, h2, h3, h4, h5, h6
+{
+	color: #2b2b2b;
+}
+
+.transparent
+{
+	opacity: 0.5;
+}
+
+.hire-us .hire-us-text h1
+{
+	font-size: 25px;
+}
+
+.hire-us .hire-us-text h3
+{
+	font-size: 18px;
+	opacity: 0.5;
+}
+
+
+.button-wrp
+{
+	display: inline;
+	height: inherit;
+	width: auto;
+	float: right;
+	
+}
+
+.hire-us > .button-wrp > button
+{
+	display: inline-block;
+	height: 35px;
+	background-color: #2b2b2b;
+
+}
+
+.white
+{
+	color: white;
+}
+
+.home-opt-wrp
+{
+	height: auto;
+}
+
+.home-opt-home-wrp
+{
+	height: auto;	
+}
+
+.home-opt-home-wrp img
+{
+	height: 122px;
+	max-width: 207px;
+	display: inline-block;
+}
+
+.col1, .col2, .col3, .col4
+{
+	display: inline-block;
+	max-width: 207px;
+}
+
+
+
+.home-opt-home-wrp .col1
 {
 
 }
 
-.col2
+.col2, .col3, .col4
+{
+	margin-left: 6px;
+}
+
+.home-opt-home-wrp .col3
 {
 
 }
 
-.col3
+.home-opt-home-wrp .col4
 {
 
 }
 
-.col4
+.read-more
 {
-
+	display: block;
+	margin: 10px 0;
+	height: 35px;
+	background-color: #2b2b2b;
+	padding: auto;
 }
 
+.read-more p
+{
+	margin: auto;
+}
+
+.borderline-img
+{
+	max-width: 100%;
+	height: auto;
+	margin: 30px auto;
+}
 
 .foot-wrp
 {
