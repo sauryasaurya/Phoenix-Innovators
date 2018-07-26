@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Projectile</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+            width: 1000px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        // ctx.beginpath();
+        ctx.moveTo(70,10);
+        ctx.lineTo(120,100);
+        ctx.lineTo(10,100);
+        ctx.lineTo(70,10);
+        ctx.stroke();
+    </script>
+
+</html>
