@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript sample 10</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="colsm-6">
+				<div id="myid" style="width: 100%;height: auto;">
+					
+				</div>
+			</div>
+			<div class="colsm-6">
+				
+			</div>
+		</div>
+	</div>
+	<script src="js/myjs.js"></script>
+	<script>
+
+		var object = {
+			person : {
+				first_name : "raju",
+				last_name : "khatiwada"
+			},
+			person1 :{
+				first_name: "kathmandu",
+				last_name: "dolakha"
+			}
+		}
+
+		var full_list = "<ul class='list-group'>";
+		for (var person in object ) {
+			full_list += "<li class='list-group-item list-group-item-info'>";
+			full_list += object[person].first_name + " " + object[person].last_name;
+			full_list += "</li>"
+		}
+		full_list += "</ul>";
+		console.log(full_list);
+		document.getElementById("myid").innerHTML = full_list;
+		
+
+	</script>
+</body>
+</html>
