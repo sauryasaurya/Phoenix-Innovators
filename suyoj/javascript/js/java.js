@@ -13,7 +13,7 @@ function projectile() {
 
     var ranger = range(velocity);
     var meter = rangeToPixel(ranger);
-    
+
 
     console.log(new_angle);
 
@@ -25,23 +25,25 @@ function projectile() {
     console.log("--------------------------------------------")
 
     console.log(("This is time :" + times(velocity)));
-
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.translate(0,150);
     var looped = times(velocity);
     var Timee = 0;
     while (Timee < looped) {
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-        ctx.moveTo(z, x);
+        ctx.moveTo(z, -x);
 
-        velocity_y = ((velocity) - gravity * Timee);
+        velocity_y = ((velocity) - gravity * Timee); //Time
         var z = newXcordinate(velocity, Timee);
 
         console.log("New Co-ordinate X :" + z);
-        var x = newYcordinate(velocity_y, Timee);
+        var x = newYcordinate(velocity_y, Timee); //Time
         console.log("New Co-ordinate Y :" + x);
         var norm = normalization(meter, z);
         console.log("The normalized form is :" + norm);
-        ctx.lineTo(z, x);
+        ctx.lineTo(z, -x);
         ctx.stroke();
         Timee++;
 
@@ -53,6 +55,7 @@ function projectile() {
 
 function range(velocity) {
     var gravity = 9.8;
+    console.log("New Angle inside Range :" + new_angle);
     return ((Math.pow(velocity, 2) * sine2theta(new_angle) / gravity));
 
 }
@@ -75,6 +78,7 @@ function radToDeg(angle) {
 }
 
 function sine2theta(new_angle) {
+    console.log("Sine2Theta value :" + Math.sin(2 * new_angle));
     return (Math.sin(2 * new_angle));
 }
 
