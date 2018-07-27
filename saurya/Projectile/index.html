@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Projectile</title>
+	<script type="text/javascript" src="projectile.js"></script>
+	<style type="text/css">
+		canvas{
+			display: block;
+			margin: 0 auto;
+			background: lightgrey;
+		}
+	</style>
+</head>
+<body onload="myCanvas()">
+
+	<canvas id="canvas" width="1200" height="800"></canvas>
+
+
+	<script type="text/javascript">
+		const pi = 3.14159;
+		const g = 9.8;
+
+		var v = 60;
+		var angle = 45;
+		var x = 0, y = 0;
+
+		var radian = angle * pi / 180;
+		var vx = v * Math.cos(radian);
+		var vy = v * Math.sin(radian);
+
+		function xDist(vx, t){
+			return(vx * t);
+		}
+
+		function yDist(vy, g, t){
+			return((vy * t) - .5 * g * t * t);
+		}
+
+		function Range(v, g, radian){
+			return((2*v*v*Math.sin(radian)*Math.cos(radian)) / g);
+		}
+
+		function MaxHeight(v, g, radian){
+			return((v * v * Math.sin(radian) * Math.sin(radian)) / (2 * g));
+		}
+
+		x = Math.floor(xDist(vx, 6));
+		y = Math.floor(yDist(vy, g, 6));
+		R = Math.floor(Range(v, g, radian));
+		Mh = Math.floor(MaxHeight(v, g, radian));
+
+		document.write("Distance of x is " + x + "<br>");
+		document.write("Distance of y is " + y + "<br>");
+		document.write("The range of projectile is " + R + "<br>");
+		document.write("The maximum height of projectile is " + Mh + "<br>");
+
+		function myCanvas(){
+		    var c = document.getElementById("canvas");
+		    var ctx = c.getContext("2d");
+		    var img = "food.png";
+		    ctx.drawImage(img,10,10);
+		    document.write("hello hello");
+			}
+
+		window.onload() = myCanvas;	
+	</script>
+
+
+	<script src="projectile.js"></script>
+</body>
+</html>

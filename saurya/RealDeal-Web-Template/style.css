@@ -211,7 +211,7 @@
 .col1, .col2, .col3, .col4
 {
 	display: inline-block;
-	max-width: 207px;
+	width: 207px;
 }
 
 

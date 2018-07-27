@@ -96,12 +96,42 @@ nav{
 	background-color: #d3d3d1;
 }
 
-nav li{
+nav ul li{
 	float: left;
 	display: inline;
 	padding: 15px 35px;
+<<<<<<< HEAD
+	margin-top: 0	;
+=======
 	/*margin-top: 15px;*/
+>>>>>>> 6d38bc890a4c472a7c627d435fd1daebfd6be5ce
 	border-right:1px dotted #bbb;
+	position: relative;
+}
+
+nav ul li ul.my-dropdown{
+	display: none;
+	position: absolute;
+	background: orange;
+	top: 100%;
+	left: 0;
+	height: auto;
+}
+nav ul li ul.my-dropdown li{
+	border-top:1px solid lightgrey;
+	padding: 10px 15px;
+	width: 300px;
+}
+nav li:hover ul.my-dropdown{
+	background: red;
+	display: block;
+}
+nav li:hover{
+	background: red;
+	color: white;
+}
+nav li:hover a{
+	color: white !important;	
 }
 
 nav li a{
