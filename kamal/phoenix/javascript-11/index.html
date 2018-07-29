@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript 11</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<!-- <div class="col-sm-12 col-md-6">
+					<div id="my_buttom" onclick="clickedFunction()">
+						Click Me
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-12">
+					<div style="width: 400px;height: 400px;background-color: red;position: relative;" id="canvas-object">
+						<div style="background-color: green;width: 40px;height: 40px;top:200px;left:0px;position: absolute;" id="anim-object">
+							
+						</div>
+					</div>
+				</div> -->
+				<div class="col-sm-12 col-md-12">
+					<div style=" width: 1000px;height: 560px;background-color: red;position: relative;" id="canvas">
+						<div style=" width: 40px;height: 40px;top:500px;left:0px;background-color: green;position: absolute;" id="anim-object-1">
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-12">
+					<input type="" name="" id="angle" value="45">
+					<input type="" name="" id="speed" value="100">
+					<button onclick="fireProjectile()">
+						Fire
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/projectile.js"></script>
+		<script>
+			// var projectile = new Projectile(100,45);
+			// projectile.showProperties();
+			// projectile.findPath();
+			// var my_buttom = document.getElementById("mytarget");
+			// my_buttom.addEventListener("mouseover",executeFunction);
+			// function executeFunction(){
+			// 	var mytarget = document.getElementById("mytarget");
+			// 	mytarget.style.backgroundColor = '#00ff00';
+			// }
+			// document.onkeydown = function(e){
+			// 	console.log(e.keyCode);
+			// }
+
+			// set timeout function
+			// var anim_object = document.getElementById("anim-object");
+
+			// function checkboundry(val){
+			// 	if (val >= 360 || val <= 0) {
+			// 		return true;
+			// 	}else{
+			// 		return false;
+			// 	}
+			// }
+
+			// var direction = 5;
+			// var animationId = setInterval(function(){
+			// 			var lPos = parseInt(anim_object.style.left);
+			// 			lPos = lPos + direction;
+			// 			anim_object.style.left = lPos + 'px';
+			// 			console.log(direction);
+			// 			if (checkboundry(lPos)) {
+			// 				direction = -direction;
+			// 			}
+			// 		},
+			// 		20
+			// 	);
+			function fireProjectile(){
+				var input_angle = document.getElementById("angle");
+				var input_angle = parseInt(input_angle.value);
+				var input_speed = parseInt(document.getElementById("speed").value);
+				var projectile = new Projectile(input_speed,input_angle);
+				projectile.findPath();
+			}
+		</script>
+	</body>
+</html>

@@ -21,28 +21,79 @@
 	<script src="js/myjs.js"></script>
 	<script>
 
-		var object = {
-			person : {
-				first_name : "raju",
-				last_name : "khatiwada"
-			},
-			person1 :{
-				first_name: "kathmandu",
-				last_name: "dolakha"
-			}
-		}
+		// var object = {
+		// 	person : {
+		// 		first_name : "raju",
+		// 		last_name : "khatiwada"
+		// 	},
+		// 	person1 :{
+		// 		first_name: "kathmandu",
+		// 		last_name: "dolakha"
+		// 	}
+		// }
 
-		var full_list = "<ul class='list-group'>";
-		for (var person in object ) {
-			full_list += "<li class='list-group-item list-group-item-info'>";
-			full_list += object[person].first_name + " " + object[person].last_name;
-			full_list += "</li>"
-		}
-		full_list += "</ul>";
-		console.log(full_list);
-		document.getElementById("myid").innerHTML = full_list;
-		
+		// var full_list = "<ul class='list-group'>";
+		// for (var person in object ) {
+		// 	full_list += "<li class='list-group-item list-group-item-info'>";
+		// 	full_list += object[person].first_name + " " + object[person].last_name;
+		// 	full_list += "</li>"
+		// }
+		// full_list += "</ul>";
+		// console.log(full_list);
+		// document.getElementById("myid").innerHTML = full_list;
 
+
+		// // javascript functions
+		// // function defination
+		// function myfunction(){
+		// 	console.log("this is first javascript function");
+		// }
+		// // function call
+		// myfunction();
+
+		// var my_function = function(){
+		// 	console.log("another function defination style");
+		// }
+		// my_function();
+
+		// var dummy_function = new myfunction();
+
+		// // function inside another function
+		// function Parent(){
+		// 	var parent_property = 500;
+		// 	var that = this;
+		// 	that.Child = function(){
+		// 		console.log("child function called");
+		// 	}
+		// 	that.showProperty = function(){
+		// 		console.log("parent property = " + parent_property);
+		// 		that.Child();
+		// 	}
+		// }
+
+		// var parent = new Parent();
+		// parent.showProperty();
+
+
+		// // javascript object style
+		// var my_obj = {
+		// 	name : "ram bahadur",
+		// 	displayName : function(){
+		// 		console.log(this.name);
+		// 	}
+		// }
+
+		// my_obj.displayName();
+
+	</script>
+	<!-- <script src="js/Projectile.js"></script>
+	<script>
+		var projectile = new Projectile(200,45,40);
+		projectile.printProperties();
+		projectile.printTrajectory();
+	</script> -->
+	<script>
+		window.close();
 	</script>
 </body>
 </html>
