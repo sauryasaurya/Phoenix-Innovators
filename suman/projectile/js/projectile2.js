@@ -17,7 +17,7 @@ function getFlightTime(velocity, angle) {
 // function to calculate the max distance
 function getMaxDistance(velocity, angle) {
     // console.log('Max Distance ' + (Math.pow(velocity, 2) / G * Math.sin(angle * 2)));
-    return Math.pow(velocity, 2) / G * Math.sin(angle * 2);
+    return (Math.pow(velocity, 2) * 2 * Math.sin(angle) * Math.cos(angle)) / G;
 }
 
 // function to calculate the max height
@@ -34,7 +34,7 @@ function init() {
     var theContext = theCanvas.getContext("2d");
 
     const G = 9.81;
-    const velocity = document.getElementById("vel").value;
+    var velocity = document.getElementById("vel").value;
     var angle = degToRad(document.getElementById("angle").value);
 
     const TIME = getFlightTime(velocity, angle);
@@ -49,19 +49,20 @@ function init() {
 
     var xCord = 0;
     var yCord = 0;
-    var initTime = 0;
+    var initTime = 0.01;
     var vx = velocity;
+    normYCord = 0;
 
-    while (initTime <= TIME) {
+    while (normYCord >= 0) {
         // rotate the coordinates
         var coor = rotate(normXCord, normYCord);
         theContext.moveTo(coor[0], coor[1]);
         var vy = velocity * angle - G * initTime;
         console.log('Time ' + initTime + ' Vx= ' + vx + ' Vy= ' + vy);
-        xCord = calculateX(vx, initTime);
-        yCord = calculateY(vy, initTime, G);
-        var normXCord = Math.round(pixNorm(xCord));
-        var normYCord = Math.round(pixNorm(yCord));
+        xCord = calculateX(vx, angle, initTime);
+        yCord = calculateY(vy, angle, initTime, G);
+        var normXCord = Math.floor(pixNorm(xCord));
+        var normYCord = Math.floor(pixNorm(yCord));
         console.log('X-Coordinate ' + xCord + ' Y-Coordinate ' + yCord);
         console.log('++++++++++++ NORMALIZED PIXELS +++++++++++++++++++');
         console.log(normXCord + ' ' + normYCord);
@@ -71,17 +72,18 @@ function init() {
         var coor = rotate(normXCord, normYCord);
         theContext.lineTo(coor[0], coor[1]);
         theContext.stroke();
-        initTime++;
+        initTime += 0.01;
     }
 }
 
 // Function to calulate coordinates
-function calculateX(vx, t) {
-    return vx * t;
+function calculateX(vx, angle, t) {
+    return vx * Math.cos(angle) * t;
 };
 
-function calculateY(vy, t, G) {
-    return vy * t - 0.5 * G * Math.pow(t, 2);
+function calculateY(vy, angle, t, G) {
+    // return vy * t - 0.5 * G * Math.pow(t, 2);
+    return vy * Math.sin(angle) * t - 0.5 * G * Math.pow(t, 2);
 }
 
 // function to convert meter to pixel
@@ -91,7 +93,7 @@ function meterToPix(m) {
 
 // Pixel Normalisation Function
 function pixNorm(pix) {
-    const SCREENPIX = 1360;
+    const SCREENPIX = 1300;
     var pixl = meterToPix(RANGE);
     return (SCREENPIX / RANGE) * pix;
 }
@@ -101,8 +103,11 @@ function rotate(x, y) {
     var ang = degToRad(360);
     var cos = Math.cos;
     var sin = Math.sin;
+    m = 300;
 
-    xr = (x - 300) * cos(ang) - (y - 300) * sin(ang) + 300;
-    yr = (x - 300) * sin(ang) - (y - 300) * cos(ang) + 300;
+    xr = (x - m) * cos(ang) - (y - m) * sin(ang) + m;
+    yr = (x - m) * sin(ang) - (y - m) * cos(ang) + m;
     return [Math.floor(xr), Math.floor(yr)];
+
+    // return [Math.floor(x), Math.floor(y)];
 }
