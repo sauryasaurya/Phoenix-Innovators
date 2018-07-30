@@ -27,10 +27,10 @@ function Canvas(canvasid, numofchild,mainid){
 		// 	projetile.findPath();
 
 		// }
-		var projetile1 = new Projectile(100, 15,this.childIdArray[0]);
+		for(var i = 0; i < this.childIdArray.length;i++){
+			var projetile1 = new Projectile(100, i * 10,this.childIdArray[i]);
 			projetile1.findPath();
-			var projetile2 = new Projectile(100, 30,this.childIdArray[1]);
-			projetile2.findPath();
+		}
 	}
 
 }
