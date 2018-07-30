@@ -1,6 +1,6 @@
 // define the constants required
 const G = 9.81;
-velocity = document.getElementById("vel").value;
+velocity = parseInt(document.getElementById("vel").value);
 
 // function to change degree to rad
 function degToRad(angle) {
@@ -34,8 +34,8 @@ function init() {
     var theContext = theCanvas.getContext("2d");
 
     const G = 9.81;
-    var velocity = document.getElementById("vel").value;
-    var angle = degToRad(document.getElementById("angle").value);
+    var velocity = parseInt(document.getElementById("vel").value);
+    var angle = degToRad(parseInt(document.getElementById("angle").value));
 
     const TIME = getFlightTime(velocity, angle);
     RANGE = getMaxDistance(velocity, angle);
@@ -55,8 +55,11 @@ function init() {
 
     while (normYCord >= 0) {
         // rotate the coordinates
-        var coor = rotate(normXCord, normYCord);
-        theContext.moveTo(coor[0], coor[1]);
+        // var coor = rotate(normXCord, normYCord);
+        // theContext.moveTo(coor[0], coor[1]);
+
+        theContext.moveTo(normXCord, normYCord);
+
         var vy = velocity * angle - G * initTime;
         console.log('Time ' + initTime + ' Vx= ' + vx + ' Vy= ' + vy);
         xCord = calculateX(vx, angle, initTime);
@@ -69,8 +72,10 @@ function init() {
         console.log('----------------------------------------------------');
 
         // For Canvas
-        var coor = rotate(normXCord, normYCord);
-        theContext.lineTo(coor[0], coor[1]);
+        // var coor = rotate(normXCord, normYCord);
+        // theContext.lineTo(coor[0], coor[1]);
+
+        theContext.lineTo(normXCord, normYCord);
         theContext.stroke();
         initTime += 0.01;
     }
@@ -108,6 +113,5 @@ function rotate(x, y) {
     xr = (x - m) * cos(ang) - (y - m) * sin(ang) + m;
     yr = (x - m) * sin(ang) - (y - m) * cos(ang) + m;
     return [Math.floor(xr), Math.floor(yr)];
-
     // return [Math.floor(x), Math.floor(y)];
 }
