@@ -1,6 +1,8 @@
 //for defining a unit movement for snake
 const box = 20;
+var delay = 100;
 
+var snakeBody = [];
 
 function Snake(head, type, speed, style, mainId){
 
@@ -10,105 +12,113 @@ function Snake(head, type, speed, style, mainId){
 	this.Style = style;
 	this.MainId = mainId;
 
+	//to setup initial coordinate for snake head
 	var xc = 260;
 	var yc = 200;
 
+	//to setup initial coordinate for food
+	var fxc = 300;
+	var fyc = 100;
 	this.init = function(){
+		//to initialize canvas for game
 		this.canvasElement = document.createElement("div");
+		this.canvasElement.setAttribute("id", "canvas");
 		this.canvasElement.className = "canvasElement";
 		var mainElement = document.getElementById(this.MainId);
 		mainElement.appendChild(this.canvasElement);
 
+		//to initialize snake head
 		this.headElement = document.createElement("div");
-		this.headElement.className = "headElement";
 		this.headElement.setAttribute("id", "snakeHead");
+		this.headElement.className = "headElement";
 		this.headElement.style.height = this.Head + "px";
 		this.headElement.style.width = this.Head + "px";
 		this.canvasElement.appendChild(this.headElement);
 
-
-		// this.headElement.style.top = xc + "px";
-		// this.headElement.style.left = yc + "px";
+		//to initialize food element
+		this.foodElement = document.createElement("div");
+		this.foodElement.setAttribute("id", "snakeFood");
+		this.foodElement.className = "foodElement";
+		this.canvasElement.appendChild(this.foodElement);
+		
 	}
 
 	this.moveSnake = function(){
-		var d;
+		var d;//direction variable
+		var count = 0;
+
+		var canObj = document.getElementById("canvas");
+		//creating snake and food object
+		var snHead = document.getElementById("snakeHead");
+		var fdObj = document.getElementById("snakeFood");
+
+		//checking which key is pressed
 		document.addEventListener("keydown", direction);
 		function direction(event){
-			let key = event.keyCode;
-			
+			let key = event.keyCode;			
 			if(key == 37 && d != "RIGHT"){d = "LEFT";}
 			if(key == 38 && d != "DOWN"){d = "UP";}
 			if(key == 39 && d != "LEFT"){d = "RIGHT";}
 			if(key == 40 && d != "UP"){d = "DOWN";}
-			if(key == 32){d = "null"}
+			if(key == 32){d = "null";}
 			
-			console.log(d);
+			// console.log(d);
 
 		}
 
 		function pushSnake(){
 
+			
+
+			//collision detection and randomizing food coordinate
+			if(snHead.style.top == fdObj.style.top &&
+			   snHead.style.left == fdObj.style.left){
+				fxc = Math.floor(Math.random()*30) * box;
+				fyc = Math.floor(Math.random()*20) * box;
+
+				//adding additional body to snakeBody array
+				console.log(count);
+				snakeBody.push("SnakeBody" + count);
+				console.log(snakeBody[count]);
+				snakeBody[count] = document.createElement("div");
+				snakeBody[count].setAttribute("id", "SnakeBody" + count);
+				snakeBody[count].className = "bodyElement";
+				canObj.appendChild(snakeBody[count]);
+
+				count++;
+			}
+
+			//console.log("length = " + snakeBody.length);
+			// for(let i=1; i <= snakeBody.length; i++ ){
+			// 	snakeBody[i].style.top = snakeBody[i-1].style.top;
+			// 	snakeBody[i].style.left = snakeBody[i-1].style.left;
+			// }
+
+			snakeBody[0].style.top = yc + "px";
+			snakeBody[0].style.left = xc + "px";
+
+
+
+			//changing coordinate according to key
 			if(d == "RIGHT"){xc += box;}
 			if(d == "DOWN"){yc += box;}
 			if(d == "LEFT"){xc -= box;}
 			if(d == "UP"){yc -= box;}
+			// console.log("(x, y):" + "(" + xc + ", " + yc + ")");
 
-			console.log("(x, y):" + "(" + xc + ", " + yc + ")");
-			snObj = document.getElementById("snakeHead");
-			snObj.style.top = yc + "px";
-			snObj.style.left = xc + "px";
+			//asigning dynamic coordinate to snake object & food object
+			snHead.style.top = yc + "px";
+			snHead.style.left = xc + "px";
+
+			fdObj.style.top = fyc + "px";
+			fdObj.style.left = fxc + "px";
 
 
 		}
 
-		let game = setInterval(pushSnake, 100);
+		let game = setInterval(pushSnake, delay);
 
 	}
 
 
-
-	
-
-
-
-	
-
-	//defining an object to manipulate html div from js
-	// MovObj = document.getElementById("object");
-	// snakeC = document.getElementById("object");
-	// console.log(snakeC.style.top);
-
-
-	// function MovObj(){
-	// 	document.addEventListener("keydown", direction);
-	// 	function direction(event){
-	// 		if(event.keycode == 37){
-	// 			d ="LEFT";
-	// 			snakeX -= box;
-	// 		}
-	// 		else if(event.keycode == 38){
-	// 			d ="UP";
-	// 		}	snakeY -= box;
-	// 		else if(event.keycode == 39){
-	// 			d ="RIGHT";
-	// 			snakeX += box;
-	// 		}
-	// 		else if(event.keycode == 40){
-	// 			d ="DOWN";
-	// 			snakeY += box;
-	// 		}
-
-	// 		snakeC.style.top = snakeY + "px";
-	// 		snakeC.style.left = snakeX + "px";
-
-
-	// 		// if( d == "LEFT") snakeX -= box;
-	// 	 //    if( d == "UP") snakeY -= box;
-	// 	 //    if( d == "RIGHT") snakeX += box;
-	// 	 //    if( d == "DOWN") snakeY += box;
-	// 	}
-	// }
-
 }
-// let start = setInterval(Snake, 50);
