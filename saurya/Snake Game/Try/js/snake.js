@@ -3,6 +3,8 @@ const box = 20;
 var delay = 100;
 
 var snakeBody = [];
+var snakeBodyX = [];
+var snakeBodyY = [];
 
 function Snake(head, type, speed, style, mainId){
 
@@ -46,11 +48,15 @@ function Snake(head, type, speed, style, mainId){
 	this.moveSnake = function(){
 		var d;//direction variable
 		var count = 0;
+		var length = 1;
 
 		var canObj = document.getElementById("canvas");
 		//creating snake and food object
 		var snHead = document.getElementById("snakeHead");
 		var fdObj = document.getElementById("snakeFood");
+
+		//creating object for score
+		var scoreObj = document.getElementById("score");
 
 		//checking which key is pressed
 		document.addEventListener("keydown", direction);
@@ -68,43 +74,18 @@ function Snake(head, type, speed, style, mainId){
 
 		function pushSnake(){
 
-			
-
-			//collision detection and randomizing food coordinate
-			if(snHead.style.top == fdObj.style.top &&
-			   snHead.style.left == fdObj.style.left){
-				fxc = Math.floor(Math.random()*30) * box;
-				fyc = Math.floor(Math.random()*20) * box;
-
-				//adding additional body to snakeBody array
-				console.log(count);
-				snakeBody.push("SnakeBody" + count);
-				console.log(snakeBody[count]);
-				snakeBody[count] = document.createElement("div");
-				snakeBody[count].setAttribute("id", "SnakeBody" + count);
-				snakeBody[count].className = "bodyElement";
-				canObj.appendChild(snakeBody[count]);
-
-				count++;
-			}
-
-			//console.log("length = " + snakeBody.length);
-			// for(let i=1; i <= snakeBody.length; i++ ){
-			// 	snakeBody[i].style.top = snakeBody[i-1].style.top;
-			// 	snakeBody[i].style.left = snakeBody[i-1].style.left;
-			// }
-
-			snakeBody[0].style.top = yc + "px";
-			snakeBody[0].style.left = xc + "px";
-
-
-
 			//changing coordinate according to key
 			if(d == "RIGHT"){xc += box;}
 			if(d == "DOWN"){yc += box;}
 			if(d == "LEFT"){xc -= box;}
 			if(d == "UP"){yc -= box;}
-			// console.log("(x, y):" + "(" + xc + ", " + yc + ")");
+
+			if(xc < 0 || xc > 580 || yc < 0 || yc > 380){
+				clearInterval(game);
+				scoreObj.style.color = "red";
+				scoreObj.style.fontSize = "40px";
+				scoreObj.innerHTML = ("Game Over!! " + "Your score is " + (length - 1));
+			}
 
 			//asigning dynamic coordinate to snake object & food object
 			snHead.style.top = yc + "px";
@@ -113,6 +94,55 @@ function Snake(head, type, speed, style, mainId){
 			fdObj.style.top = fyc + "px";
 			fdObj.style.left = fxc + "px";
 
+			//adding additional body to snakeBody array
+			// console.log(count);
+			if(d == "LEFT" || d == "RIGHT" || d =="UP" || d =="DOWN"){
+				snakeBody.push("SnakeBody" + count);
+				// console.log("Array " + snakeBody[count] + " created");
+				snakeBody[count] = document.createElement("div");
+				// snakeBody[count].setAttribute("id", "SnakeBody" + count);
+				snakeBody[count].className = "bodyElement";
+				canObj.appendChild(snakeBody[count]);
+				snakeBodyX[count] = xc;
+				snakeBodyY[count] = yc;
+
+				snakeBody[count].style.left = snakeBodyX[count] + "px";
+				snakeBody[count].style.top = snakeBodyY[count] + "px";
+
+				
+				count++;
+			}	
+
+			//collision detection and randomizing food coordinate
+			if(snHead.style.top == fdObj.style.top &&
+			   snHead.style.left == fdObj.style.left){
+				fxc = Math.floor(Math.random()*30) * box;
+				fyc = Math.floor(Math.random()*20) * box;
+				length++;
+				scoreObj.innerHTML = ("Score: " + (length - 1));
+			}else if(count > length){
+					canObj.removeChild(snakeBody[count - length - 1]);
+
+					// snakeBody.remove(count - length - 1);
+					// snakeBodyX.remove(count - length - 1);
+					// snakeBodyY.remove(count - length - 1);
+				}
+			
+			for(let i=count - 1; i>=(count - length - 1); i--){
+				if(snakeBody[i-1].style.top == snHead.style.top &&
+					snakeBody[i-1].style.left == snHead.style.left){
+					console.log("collision");
+					clearInterval(game);
+					clearInterval(game);
+				scoreObj.style.color = "red";
+				scoreObj.style.fontSize = "40px";
+				scoreObj.innerHTML = ("Game Over!! " + "Your score is " + (length - 1));
+				}
+			}
+			
+
+			
+			
 
 		}
 
