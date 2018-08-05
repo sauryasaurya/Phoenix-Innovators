@@ -1,13 +1,13 @@
 //for defining a unit movement for snake
 const box = 20;
-var delay = 100;
+var delay = 60;
 
+//array for snake body and its x and y coordinate
 var snakeBody = [];
 var snakeBodyX = [];
 var snakeBodyY = [];
 
 function Snake(head, type, speed, style, mainId){
-
 	this.Head = head;
 	this.Type = type;
 	this.Speed = speed;
@@ -21,6 +21,7 @@ function Snake(head, type, speed, style, mainId){
 	//to setup initial coordinate for food
 	var fxc = 300;
 	var fyc = 100;
+
 	this.init = function(){
 		//to initialize canvas for game
 		this.canvasElement = document.createElement("div");
@@ -46,10 +47,13 @@ function Snake(head, type, speed, style, mainId){
 	}
 
 	this.moveSnake = function(){
+		//creating and initializing audio objects
+
 		var d;//direction variable
+
 		var count = 0;
 		var length = 1;
-
+		//creating canvas object
 		var canObj = document.getElementById("canvas");
 		//creating snake and food object
 		var snHead = document.getElementById("snakeHead");
@@ -72,30 +76,32 @@ function Snake(head, type, speed, style, mainId){
 
 		}
 
+		let game = setInterval(pushSnake, delay);
+
 		function pushSnake(){
 
-			//changing coordinate according to key
-			if(d == "RIGHT"){xc += box;}
+			//changing coordinate according to last key pressed
+			if(d == "RIGHT"){xc += box; }
 			if(d == "DOWN"){yc += box;}
 			if(d == "LEFT"){xc -= box;}
 			if(d == "UP"){yc -= box;}
 
+			//when snake collides with border
 			if(xc < 0 || xc > 580 || yc < 0 || yc > 380){
+			if(xc < 0){xc = 0};
+			if(xc > 580){xc = 580};
+			if(yc < 0){yc = 0};
+			if(yc > 380){yc = 380};
+
 				clearInterval(game);
 				scoreObj.style.color = "red";
 				scoreObj.style.fontSize = "40px";
 				scoreObj.innerHTML = ("Game Over!! " + "Your score is " + (length - 1));
 			}
 
-			//asigning dynamic coordinate to snake object & food object
-			snHead.style.top = yc + "px";
-			snHead.style.left = xc + "px";
-
-			fdObj.style.top = fyc + "px";
-			fdObj.style.left = fxc + "px";
+			
 
 			//adding additional body to snakeBody array
-			// console.log(count);
 			if(d == "LEFT" || d == "RIGHT" || d =="UP" || d =="DOWN"){
 				snakeBody.push("SnakeBody" + count);
 				// console.log("Array " + snakeBody[count] + " created");
@@ -111,9 +117,16 @@ function Snake(head, type, speed, style, mainId){
 
 				
 				count++;
-			}	
+			}
 
-			//collision detection and randomizing food coordinate
+			//asigning dynamic coordinate to snake object & food object
+			snHead.style.top = yc + "px";
+			snHead.style.left = xc + "px";
+
+			fdObj.style.top = fyc + "px";
+			fdObj.style.left = fxc + "px";
+
+			//collision detection with food and randomizing food coordinate
 			if(snHead.style.top == fdObj.style.top &&
 			   snHead.style.left == fdObj.style.left){
 				fxc = Math.floor(Math.random()*30) * box;
@@ -123,12 +136,10 @@ function Snake(head, type, speed, style, mainId){
 			}else if(count > length){
 					canObj.removeChild(snakeBody[count - length - 1]);
 
-					// snakeBody.remove(count - length - 1);
-					// snakeBodyX.remove(count - length - 1);
-					// snakeBodyY.remove(count - length - 1);
+					
 				}
-			
-			for(let i=count - 1; i>=(count - length - 1); i--){
+			//when snake collides with its own body
+			for(let i=count - 1; i>=(count - length + 1); i--){
 				if(snakeBody[i-1].style.top == snHead.style.top &&
 					snakeBody[i-1].style.left == snHead.style.left){
 					console.log("collision");
@@ -140,15 +151,14 @@ function Snake(head, type, speed, style, mainId){
 				}
 			}
 			
-
-			
 			
 
 		}
 
-		let game = setInterval(pushSnake, delay);
+		
 
 	}
+
 
 
 }
