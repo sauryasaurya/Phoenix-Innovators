@@ -1,7 +1,7 @@
 const GRAVITY = 9.8;
 
 // projectile function
-function Projectile(vel, ang,childid){
+function Projectile(vel, ang, childid){
 	this.velocity = vel;
 	this.angle = ang;
 	this.childId = childid;
