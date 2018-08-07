@@ -1,0 +1,61 @@
+html, body{
+  width: 100%;
+}
+
+body{
+
+}
+
+.bg-lightbulb{
+  width: 100%;
+  min-height: 620px;
+  background-image: url('../img/lightbulb1.png');
+}
+
+.nav-link{
+  font-size: .8rem;
+  margin: 1rem;
+}
+
+.nav-link:hover{
+  color: #ffffff;
+}
+
+.bg-dark{
+  opacity: 0.8;
+}
+
+/*for image quotes*/
+.image-quote{
+  margin-top: 5%;
+}
+
+/*Corporate Images Container*/
+.container-70{
+  width: 80%;
+}
+
+.padding-0{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.margin-0{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.cover-top{
+  transform: translateY(-30%);
+}

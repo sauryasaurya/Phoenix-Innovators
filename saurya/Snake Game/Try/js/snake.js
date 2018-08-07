@@ -104,7 +104,6 @@ function Snake(head, type, speed, style, mainId){
 			//adding additional body to snakeBody array
 			if(d == "LEFT" || d == "RIGHT" || d =="UP" || d =="DOWN"){
 				snakeBody.push("SnakeBody" + count);
-				// console.log("Array " + snakeBody[count] + " created");
 				snakeBody[count] = document.createElement("div");
 				// snakeBody[count].setAttribute("id", "SnakeBody" + count);
 				snakeBody[count].className = "bodyElement";
