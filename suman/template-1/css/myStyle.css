@@ -1,337 +1,330 @@
-.wrapper {
-    margin: 0 10%;
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* Tag Line */
-
-.tagline {
-    font-size: 1em;
-    text-align: center;
-    color: black;
-    margin: 0 auto;
-    padding: 2px;
-}
-
-/* Responsive Top Nav Bar */
-
-/* Add a black background color to the top navigation */
-
-.topnav {
-    background-color: darkslategray;
-    overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-/* Change the color of links on hover */
-
-.topnav a:hover {
-    background-color: dimgray;
-    color: black;
-}
-
-/* Add an active class to highlight the current page */
-
-.active {
-    background-color: grey;
+i {
     color: white;
 }
 
-/* Hide the link that should open and close the topnav on small screens */
-
-.topnav .icon {
-    display: none;
+.main-wrapper {
+    margin: 0 1%;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Slider */
-
-@keyframes slidy {
-    0% {
-        left: 0%;
-    }
-    20% {
-        left: 0%;
-    }
-    25% {
-        left: -100%;
-    }
-    45% {
-        left: -100%;
-    }
-    50% {
-        left: -200%;
-    }
-    70% {
-        left: -200%;
-    }
-    75% {
-        left: -300%;
-    }
-    95% {
-        left: -300%;
-    }
-    100% {
-        left: -400%;
-    }
+#header {
+    position: relative;
+    width: 100%;
 }
 
-body {
-    margin: 0;
+#slider {
+    max-width: 100%;
+    height: 350px;
+    background: url('../img/slide.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 3% 10%;
 }
 
-div#slider {
-    overflow: hidden;
+.menu {
+    top: 0;
+    border-bottom: 1px solid white;
+    color: whitesmoke;
+    height: 30px;
 }
 
-div#slider figure img {
-    width: 20%;
-    height: auto;
+.logo {
     float: left;
 }
 
-div#slider figure {
-    position: relative;
-    width: 500%;
+.menu-items {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
     margin: 0;
-    left: 0;
-    text-align: left;
-    font-size: 0;
-    animation: 30s slidy infinite;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    padding: 0 5px;
+}
+
+.tagline-section {
+    margin-top: 10%;
+    align-content: center;
+}
+
+.tagline {
+    top: 30%;
+    width: 90%;
+    float: left;
+    height: 100px;
+}
+
+.headline,
+.baseline {
+    width: 100%;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin: 1% auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.baseline {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.arrow {
+    position: relative;
+    top: 30%;
+    min-width: 5%;
+    float: left;
+    color: white;
+    font-size: 1.5em;
+    height: 100px;
+    align-items: center;
+}
+
+.arr {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 30%;
+    border-radius: 50%;
+    border: 2px solid white;
+    text-align: center;
+    line-height: inherit;
+}
+
+.pageIcons {
+    width: 100%;
+    margin: 25% auto;
+    color: white;
+}
+
+.icons {
+    width: 200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.showMore {
+    position: absolute;
+    background-color: rgb(59, 163, 204);
+    color: white;
+    border-radius: 4%;
+    left: 20%;
+    font-weight: bolder;
+    font-size: 1em;
+    padding: .8% 2%;
+    border: none;
+}
+
+/* Content Wrapper */
+
+.content-wrapper {
+    position: relative;
+    margin: 0 10%;
+    height: auto;
+}
+
+.content-wrapper>.text {
+    position: absolute;
+    width: 100%;
+    margin: 3% auto;
+    text-align: center;
 }
 
 /* Info Images */
 
 .info-bar {
     width: 100%;
-    margin: 0 2%;
+    position: absolute;
+    margin: 10% auto;
 }
 
 .info {
-    overflow: hidden;
-    max-width: 90%;
-    max-height: 300px;
-    float: left;
+    position: relative;
+    width: 29%;
+    min-height: 200px;
     margin: 0 2%;
+    float: left;
+    background: url('../img/pro-1.jpg');
+    background-size: contain;
+}
+
+.circleIcon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 42%;
+    margin: -20px auto;
+    border-radius: 50%;
+    border: solid 4px whitesmoke;
+    background-color: #58a0c3;
+}
+
+.circleIcon>i {
+    color: white;
+    margin-left: 20%;
+    margin-top: 20%;
+    line-height: inherit;
+}
+
+.proText {
+    position: absolute;
+    bottom: 0;
+    width: 91%;
+    text-align: center;
+    color: dimgray;
+    background: white;
     border: 2px solid grey;
+    padding: 4%;
 }
 
-.info>img {
-    min-width: 300px;
-    max-height: 200px;
+.pro1 {
+    font-size: 1.2em;
+    margin: 1% auto;
 }
 
-.info>caption {
-    min-width: inherit;
-    max-height: 30px;
-    text-align: center;
+.pro2 {
+    font-size: .6em;
+    margin: 1% auto;
 }
 
-.img_container {
-    text-align: center;
-    height: 100px;
-    border: 2px solid black;
-}
-
-/* Features CSS Section */
+/* Horizontal line */
 
 .hor {
-    margin: 1em auto;
-    width: 100%;
-    height: 2px;
-    background-color: grey;
-    clear: both;
-}
-
-.feat {
+    position: absolute;
     width: 100%;
 }
 
-.feat>img {
-    float: left;
-    max-width: 200px;
+.hr-line {
+    width: 100%;
+    position: absolute;
+    height: 4px solid grey;
+    margin-top: 32%;
 }
 
-.feat>text {
-    vertical-align: middle;
-    max-width: 70%;
-    /* float: left; */
-}
-
-.feat>.text>p>button {
-    background-color: #fff;
-    border: 2px solid dodgerblue;
-    font-size: 16px;
-    color: dodgerblue;
-}
-
-/* Text Class */
-
-.text {
+.hr-icon {
+    margin-top: 30%;
+    position: absolute;
+    font-size: 1.5em;
+    height: 50px;
+    width: 50px;
+    left: 50%;
+    border-radius: 50%;
+    background: white;
+    color: black;
     text-align: center;
 }
 
-.text-left {
-    text-align: left;
+.hr-icon>i {
+    color: skyblue;
+    line-height: inherit;
 }
 
-/* Pro CSS */
-
-.pro-bar {
+.tagline2 {
+    position: absolute;
     width: 100%;
-    margin: 0 2%;
-    height: 250px;
+    margin-top: 40%;
 }
 
-.pro {
-    min-width: 220px;
-    height: 200px;
+.headline2,
+.baseline2 {
+    font-size: 2em;
+    text-align: center
+}
+
+.baseline2 {
+    font-size: 1em;
+}
+
+/* Our latest projects section */
+
+.proj {
+    width: 100%;
+    position: absolute;
+    height: 220px;
+    margin: 50% auto;
+}
+
+.projBody {
+    width: 21%;
+    height: 220px;
     float: left;
-    margin: 0 2%;
-    color: aliceblue;
+    margin: 0% 2%;
 }
 
-.pro>img {
+.projBlock {
+    position: relative;
     width: 100%;
-    height: 160px;
-    margin: 0 2%;
+    height: 100%;
+    border-radius: 4%;
+    overflow: hidden;
 }
 
-.pro>text {
-    align-content: center;
+.projBlock>i {
+    display: none;
+    position: absolute;
+    font-size: 2em;
+    top: 45%;
+    left: 45%;
 }
 
-.pro>p>i {
-    margin: 0 5px;
+.projImg {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s;
 }
 
-.pro>input {
-    background-color: darkslategray;
-    color: #fff
+.projDesc {
+    width: 100%;
+    height: 30px;
+    padding: 2% 5%;
+    font-size: 1em;
+    align-items: center;
+}
+
+.projDesc>p {
+    margin: 1% 10%;
+}
+
+.projBlock:hover .projImg,
+.projBlock:focus .projImg {
+    transform: scale(1.2);
+}
+
+.projBlock:hover i,
+.projBlock:focus i {
+    display: block;
+}
+
+/* Different Backgroung Images */
+
+.proj-bg1 {
+    background-image: url(../img/proj-bg1.jpeg);
+}
+
+.proj-bg2 {
+    background-image: url(../img/proj-bg2.jpg);
+}
+
+.proj-bg3 {
+    background-image: url(../img/proj-bg3.jpg);
 }
 
 /* Client Testimonials CSS */
 
-.text-slider {
-    height: 200px;
-    width: 100%;
-    overflow: hidden;
-    background-color: darkgray;
-}
-
-.text-slider div {
-    margin: 0;
-    padding: 0;
-}
-
-.text-slider div {
-    animation: text-slide 10s 2s infinite;
-}
-
-@keyframes text-slide {
-    0% {
-        margin-top: 0;
-    }
-    25% {
-        margin-top: -18px;
-    }
-    50% {
-        margin-top: -36px;
-    }
-    75% {
-        margin-top: -54px;
-    }
-    100% {
-        margin-top: 0;
-    }
-}
-
-/* Contact Us CSS */
-
-.contact {
-    width: 100%;
-    height: auto;
-    margin: 0 2%;
-    background-color: grey;
-}
-
-.contact-box {
-    background-color: transparent;
-    width: 220px;
-    max-height: 250px;
-    float: left;
-    margin: 0 2%;
-}
-
-.footer {
-    clear: both;
-    margin: 0 2%;
-    height: 20px;
-    font-size: 1em;
-    background-color: dimgray;
-    padding: 10px;
-    color: white
-}
-
-.social {
-    float: right;
-
-}
-
-/* Media Queries */
-
-@media screen and (max-width: 600px) {
-    .topnav a {
-        font-size: 12px;
-    }
-    .topnav a:not(:first-child) {
-        display: none;
-    }
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
-    .tagline {
-        font-size: .7em;
-    }
-    .feat>img {
-        max-width: 50px;
-    }
-    .feat>.text>p>button {
-        font-size: 8px;
-    }
-    .pro {
-        min-width: 90%;
-    }
-
-    .footer{
-        height: 10px;
-        font-size: .5em;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .topnav.responsive {
-        position: relative;
-    }
-    .topnav.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-}

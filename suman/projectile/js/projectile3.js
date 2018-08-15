@@ -49,7 +49,7 @@ function rotate(x, y) {
     var ang = degToRad(360);
     var cos = Math.cos;
     var sin = Math.sin;
-    m = 300;
+    m = 200;
 
     xr = (x - m) * cos(ang) - (y - m) * sin(ang) + m;
     yr = (x - m) * sin(ang) - (y - m) * cos(ang) + m;
