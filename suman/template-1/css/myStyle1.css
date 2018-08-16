@@ -664,7 +664,7 @@ li {
         align-content: center;
     }
     .social {
-        clear: both;
+        /* clear: both; */
         display: inline-block;
     }
 }
