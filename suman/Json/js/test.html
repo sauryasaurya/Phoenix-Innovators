@@ -1,0 +1,20 @@
+var json = {
+    "aa: [{
+        "id": "1",
+            "data": "aaa1data"
+    }, {
+        "id": "2",
+            "data": "aaa2data"
+    }],
+        "bbb": [{
+        "id": "3",
+            "data": "bbb1data"
+    }]
+}
+<?php
+$.each(json, function (key, data) {
+    console.log(key)
+    $.each(data, function (index, data) {
+        console.log('index', data)
+    })
+})
