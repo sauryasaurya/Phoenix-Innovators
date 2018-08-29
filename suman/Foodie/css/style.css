@@ -1,0 +1,21 @@
+.menu {
+    max-width: 100%;
+    height: 150px;
+    margin: 2%;
+}
+
+.menuImageP {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.menuImageC {
+    width: 100%;
+    height: 100%;
+    transition: .6s all;
+}
+
+.menu:hover .menuImageC {
+    transform: scale(1.1);
+}

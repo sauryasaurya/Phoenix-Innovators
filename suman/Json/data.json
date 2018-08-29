@@ -1,0 +1,22 @@
+[{
+        "foodId": "F1",
+        "foodName": "Food1",
+        "category": "Food",
+        "price": "120",
+        "img":"img/food1.jpeg"
+    },
+    {
+        "foodId": "F2",
+        "foodName": "Food2",
+        "category": "Beverage",
+        "price": "110",
+        "img":"img/food2.jpeg"
+    },
+    {
+        "foodId": "F3",
+        "foodName": "Food3",
+        "category": "Food",
+        "price": "300",
+        "img":"img/food3.jpeg"
+    }
+]

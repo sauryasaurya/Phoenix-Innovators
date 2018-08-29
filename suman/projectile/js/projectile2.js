@@ -55,10 +55,10 @@ function init() {
 
     while (normYCord >= 0) {
         // rotate the coordinates
-        // var coor = rotate(normXCord, normYCord);
-        // theContext.moveTo(coor[0], coor[1]);
+        var coor = rotate(normXCord, normYCord);
+        theContext.moveTo(coor[0], coor[1]);
 
-        theContext.moveTo(normXCord, normYCord);
+        // theContext.moveTo(normXCord, normYCord);
 
         var vy = velocity * angle - G * initTime;
         console.log('Time ' + initTime + ' Vx= ' + vx + ' Vy= ' + vy);
@@ -72,10 +72,10 @@ function init() {
         console.log('----------------------------------------------------');
 
         // For Canvas
-        // var coor = rotate(normXCord, normYCord);
-        // theContext.lineTo(coor[0], coor[1]);
+        var coor = rotate(normXCord, normYCord);
+        theContext.lineTo(coor[0], coor[1]);
 
-        theContext.lineTo(normXCord, normYCord);
+        // theContext.lineTo(normXCord, normYCord);
         theContext.stroke();
         initTime += 0.01;
     }
@@ -88,7 +88,7 @@ function calculateX(vx, angle, t) {
 
 function calculateY(vy, angle, t, G) {
     // return vy * t - 0.5 * G * Math.pow(t, 2);
-    return vy * Math.sin(angle) * t - 0.5 * G * Math.pow(t, 2);
+    return vy * Math.sin(angle) * t - 0.5 * G * t;
 }
 
 // function to convert meter to pixel
@@ -108,7 +108,7 @@ function rotate(x, y) {
     var ang = degToRad(360);
     var cos = Math.cos;
     var sin = Math.sin;
-    m = 300;
+    m = 200;
 
     xr = (x - m) * cos(ang) - (y - m) * sin(ang) + m;
     yr = (x - m) * sin(ang) - (y - m) * cos(ang) + m;
