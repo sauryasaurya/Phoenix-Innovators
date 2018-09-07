@@ -229,21 +229,33 @@ body{
 
 .case-studies{
   display: inline-block;
+  
 }
 
-.more-prjct-btn{
+.btn-news{  
   float: right;
-  display: inline-block;
-  margin-top: 15px;
 }
 
-@media all and (max-width: 514px){
-  .more-prjct-btn{
-    display: block;
+@media(max-width: 576px){
+  .case-studies h2,p{
+    display: inline-block;
 
-  .
   }
+
+  .case-studies{
+    display: block;
+    padding: 0 auto;
+  }
+
+  .btn-news{
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+
 }
+
+
 
 /*###################################################*/
 /*SUBSCRIBE NEWSLETTER*/
@@ -444,3 +456,53 @@ body{
 /*.border-grey{
   border: 2px solid lightgrey;
 }*/
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/*FOOTER*/
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+footer{
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
+}
+
+.insurance{
+  display: inline;
+  float: right;
+}
+
+.insurance a{
+  text-decoration: none;
+}
+
+.insurance a li:hover{
+  color: #ffffff;
+}
+
+.insurance h5{
+  display: inline;
+}
+
+.insurance a li{
+  list-style-type: none;
+  display: inline;
+  color: #d5d5d5;
+  padding: 0 .4rem;
+  font-size: .8rem;
+
+
+}
+
+.insurance a li:hover{
+  color: #ffffff;
+}
+
+footer ul li{
+  list-style-type: none;
+}
+
+@media(max-width: 768px){
+  .footer-elem{
+    display: inline;
+  }
+}
