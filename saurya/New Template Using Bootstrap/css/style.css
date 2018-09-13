@@ -6,6 +6,16 @@ body{
 
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover{
+  text-decoration: none;
+  color: inherit;
+}
+
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /*NAVIGATION ITEMS*/
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -238,13 +248,15 @@ body{
 
 @media(max-width: 576px){
   .case-studies h2,p{
-    display: inline-block;
+    display: block;
 
   }
 
   .case-studies{
     display: block;
-    padding: 0 auto;
+    width: -moz-max-content;
+    width: max-content;
+    margin: auto;
   }
 
   .btn-news{
@@ -279,6 +291,19 @@ body{
   display: inline-block;
 }
 
+@media(max-width: 768px){
+  .nws-ltr-sgn{
+    display: block;
+    }
+
+  .nws-ltr-sgn button,h4{
+    display: block;
+    width: -moz-max-content;
+    width: max-content;
+    margin: auto;
+  }
+
+}
 .nws-ltr-frm{
   display: inline-block;
   /*vertical-align: top;*/
@@ -297,14 +322,14 @@ body{
 }
 
 .nws-ltr-frm form{
- 
+  
 }
 
 .nws-ltr-frm form input{
   margin: 0 10px;
   height: 40px;
   width: max-content;
-  float: right;
+  margin: auto;
 }
 
 #name{
@@ -379,6 +404,38 @@ body{
 
 }
 
+.tag4-wrp{
+  
+}
+
+.tag4{
+  width: 100%;
+  height: 100%;
+}
+
+.pol-1{
+  width: 65%;
+  min-height: 300px;
+  float: left;
+  background-color: white;
+  padding: 20px;
+  clip-path: polygon(0% 100%, 80% 100%, 100% 0%, 0% 0%);
+
+}
+
+.pol-1-box{
+  width: 100px;
+  height: 120px;
+  display: block;
+  vertical-align: bottom;
+  background-color: lightgrey;
+  padding-top: 40px;
+}
+
+.pol-1-box p{
+
+}
+
 @media all and (max-width: 768px){
   
   .grid-cont{
@@ -413,6 +470,19 @@ body{
   grid-area: tag1;
   background-image: url("../img/corporate-image.jpg");
   background-size: cover;
+
+}
+
+.tag1-text{
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  
+}
+
+.tag1-text:hover{
+  background-color: black;
+  opacity: .6;
 }
 
 .tag2{
@@ -458,8 +528,24 @@ body{
 }*/
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/*4-CARDS*/
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+@media(max-width: 576px){
+  .card-img{
+    display: block;
+    margin: auto;
+
+  }
+}
+
+
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /*FOOTER*/
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
 footer{
   background-color: #3f3f3f;
   color: #d5d5d5;
